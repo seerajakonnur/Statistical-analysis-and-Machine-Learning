@@ -10,7 +10,7 @@ grates DNABERT-2, a transformer-based foundation model for genomic sequences,
 with machine learning and genetic algorithms to predict reassortment events.
 
 ## Concept and Framework
-This work-in-progress presents a four-stage computational pipeline designed to identify and assess
+This work-in-progress presents a 3-stage computational pipeline designed to identify and assess
 influenza virus reassortment potential from environmental surveillance data. 
 
 ### * Feature extraction using foundation model
@@ -22,3 +22,5 @@ The sequences are classified into reassortant and non-reassortant categories usi
 ### * Genetic algorithm based candidate search
 Influenza virus reassortment is not entirely random; it is shaped by factors such as host species, viral subtypes, and compatible segment combinations. This component of the project is still under development and requires further refinement before a full-scale genetic algorithm can be implemented.
 The goal is to simulate reassortment by generating multiple potential reassortant genomes and evaluating them using the trained classifier to determine whether they qualify as reassortants or non-reassortants. For newly collected environmental sequencing samples, the workflow would first classify whether the samples are reassortant or non-reassortant. Next, for those identified as non-reassortants, potential reassortant combinations will be computationally generated and passed through the classifier again to identify viable reassortant candidates.
+
+## Data
