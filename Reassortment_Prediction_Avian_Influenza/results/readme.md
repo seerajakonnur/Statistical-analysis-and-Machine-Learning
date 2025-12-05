@@ -2,6 +2,8 @@ t-SNE was applied to the DNABERT2-derived embeddings to project the high-dimensi
 
 ![t-SNE visualization](../assets/influenza_clustering_segment_specific_tsne.png)
 
+![t-SNE visualization](../assets/prediction_probabilities.png)
+
 The classifier correctly identified all 30 reassortant sequences and 25 non-reassortant sequences in the test set, demonstrating strong generalization to previously unseen mixed genotypes. Why 100% accuracy is expected here and not Overfitting: The segment-specific approach is particularly well-suited for reassortment detection because influenza reassortment occurs through exchange of entire intact segments rather than point mutations, creating categorical genomic signatures. During model development, cross-validation analysis on training data showed zero overfitting gap (mean training score: 100.0%, mean validation score: 100.0%, gap: 0.0%), indicating excellent generalization capacity. This perfect generalization was confirmed on 55 completely unseen test samples from different genotypes, achieving 100.0% accuracy with high prediction confidence (mean = 0.96, all probabilities > 0.7). Statistical hypothesis
 testing indicates this performance is highly unlikely by chance (p = 0.006, binomial exact test).
 Since reassortment involves complete segment exchanges between North American and Eurasian
