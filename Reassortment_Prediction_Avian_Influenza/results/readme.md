@@ -16,3 +16,36 @@ reassortment signatures.
 
 ## Genetic Algorithm
 
+### Pseudocode
+function fitness_function
+1.  begin
+2.  fitness $\leftarrow$  0
+3.  genome $\leftarrow$ I.segments // genome = [s0, s1, s2, s3, s4, s5, s6, s7]
+4.  // order: [PB2, PB1, PA, HA, NP, NA, M, NS]
+5.  // ---------- Polymerase complex integrity ----------
+6.  polymerase $\leftarrow$ [genome[0], genome[1], genome[2]]
+7.  if all_same(polymerase) then
+8.      fitness $\leftarrow$ fitness + 100
+9.      pol_parent $\leftarrow$ polymerase[0]
+10.     
+11.     // NP-Polymerase compatibility
+12.     if genome[4] = pol_parent then
+13.         fitness $\leftarrow$ fitness + 50
+14.     end if
+15. else
+16.     // Partial polymerase integrity (2 and 1 split)
+17.     if count(polymerase, 0) = 2 or count(polymerase, 1) = 2 then
+18.         fitness $\leftarrow$ fitness + 35
+19.     end if
+20. end if
+21. // ---------- HA NA functional pairing ----------
+22. if genome[3] = genome[5] then
+23.     fitness $\leftarrow$ fitness + 40
+24. end if
+25. // ---------- Penalty for pure parental types ----------
+26. if count(genome, 0) = 8 or count(genome, 1) = 8 then
+27.     fitness $\leftarrow$ fitness $-70$
+28. end if
+29. return fitness
+30. end
+
