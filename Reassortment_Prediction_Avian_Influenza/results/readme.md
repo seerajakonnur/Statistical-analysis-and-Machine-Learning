@@ -15,6 +15,7 @@ reassortment signatures.
 ![t-SNE visualization](../assets/prediction_probabilities.png)
 
 ## Genetic Algorithm
+GA recovered known reassortants reported in the 2021–2022 outbreak study, validating the approach (example shown below).
 
 
 
